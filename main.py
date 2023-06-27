@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from tkmacosx import Button  # import Button from tkmacosx
 
 class Application(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -29,7 +30,7 @@ class Application(tk.Tk):
         top_bar_buttons = ["Modules", "Execute", "New", "Open", "Save", "Cancel", "Exit"]
         for i, button_name in enumerate(top_bar_buttons):
             self.top_bar.columnconfigure(i, weight=1)
-            button = tk.Button(self.top_bar, text=button_name, background='#9394a5', foreground='#fafafa')
+            button = Button(self.top_bar, text=button_name, background='#9394a5', foreground='#fafafa')  # use Button from tkmacosx
             if button_name == "Modules":
                 button.configure(command=self.toggle_sidebar)
             button.grid(row=0, column=i, sticky="nsew")  # use grid instead of pack
@@ -50,7 +51,7 @@ class Application(tk.Tk):
             frame = frame_class(parent=self.frames_container, controller=self)
             self.frames[segment] = frame
             frame.grid(row=0, column=0, sticky="nsew")
-            button = tk.Button(self.sidebar, text=segment, command=lambda segment=segment: self.show_frame(segment), background='#9394a5', foreground='#fafafa')
+            button = Button(self.sidebar, text=segment, command=lambda segment=segment: self.show_frame(segment), background='#9394a5', foreground='#fafafa')  # use Button from tkmacosx
             button.pack(side="top", fill="x")
 
         self.show_frame("Overview")
