@@ -8,7 +8,7 @@ class Application(tk.Tk):
         # Define the window layout
         self.geometry("800x600")  # Window size
         self.title("RaptorVision Data Miner")  # Window title
-        self.iconbitmap(r"C:\Users\nicke\OneDrive\Personal Files\Projects\Py Data Miner\gui_icon.ico")
+        self.iconbitmap(r'C:\Users\nicke\OneDrive\Personal Files\Projects\RaptorVision-Data-Miner\RaptorVision-Data-Miner\gui_icon.ico')
 
         # Create a style for the frames
         style = ttk.Style()
